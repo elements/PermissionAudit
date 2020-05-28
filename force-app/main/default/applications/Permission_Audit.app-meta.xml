@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>true</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <label>Permission Audit</label>
+    <navType>Standard</navType>
+    <tabs>Field_Auditor</tabs>
+    <tabs>Object_to_Profile_Auditor</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Permission_Audit_UtilityBar</utilityBar>
+</CustomApplication>

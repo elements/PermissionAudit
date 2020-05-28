@@ -1,0 +1,59 @@
+<template>
+
+    <lightning-card>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-combobox
+                        id="Object"
+                        label="Object"
+                        value={selectedObject}
+                        options={sObjectOptions}
+                        onchange={handleSObjectChange}
+                ></lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-combobox
+                        id="Field"
+                        label="Field"
+                        value={selectedField}
+                        options={fieldOptions}
+                        onchange={handleFieldChange}
+                ></lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="6" padding="around-small">
+                <h3>Profiles with Access</h3>
+                <lightning-datatable
+                        key-field="Id"
+                        data={profileData}
+                        columns={profileColumns}
+                        hide-checkbox-column="true">
+                </lightning-datatable>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <h3>Permission Sets</h3>
+                <lightning-datatable
+                        key-field="Id"
+                        data={permsetData}
+                        columns={profileColumns}
+                        hide-checkbox-column="true">
+                </lightning-datatable>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-small">
+                <h3>Users with Access</h3>
+                <lightning-datatable
+                        key-field="Id"
+                        data={usersWithAccessData}
+                        columns={usersWithAccessColumns}
+                        hide-checkbox-column="true">
+                </lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+
+    </lightning-card>
+
+
+</template>

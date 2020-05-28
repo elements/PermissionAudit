@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-combobox
+                        id="Object"
+                        label="Object"
+                        value={selectedObject}
+                        options={sObjectOptions}
+                        onchange={handleObjectChange}
+                ></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-dual-listbox
+                        id="Profile"
+                        label="Profile"
+                        value={selectedProfiles}
+                        options={profileOptions}
+                        onchange={handleProfilesChange}
+                        size="4"
+                ></lightning-dual-listbox>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-datatable
+                        key-field="id"
+                        data={fieldsData}
+                        columns={fieldPermissionColumns}
+                        hide-checkbox-column="true">
+                </lightning-datatable>
+                <div if:true={isLoading} class="slds-spinner_inline spinner-padding">
+                    <lightning-spinner variant="brand"
+                                       alternative-text="Loading Permissions"
+                                       size="medium">
+                    </lightning-spinner>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
